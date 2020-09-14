@@ -10,7 +10,7 @@ source:
   sha256: 5e5efdd1686aa566af0d3cc1313b131e4b197657a8ffd03669e6d3fad92705ec
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - face_recognition=face_recognition.face_recognition_cli:main
