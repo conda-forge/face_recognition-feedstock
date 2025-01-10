@@ -10,7 +10,7 @@ source:
   sha256: 5e5efdd1686aa566af0d3cc1313b131e4b197657a8ffd03669e6d3fad92705ec
 
 build:
-  number: 2
+  number: 3
   noarch: python
   entry_points:
     - face_recognition=face_recognition.face_recognition_cli:main
@@ -20,16 +20,18 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
     - click >=6.0
     - dlib >=19.7
     - face_recognition_models >=0.3.0
     - numpy >=1.8
     - pillow
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - face_recognition
   commands:
